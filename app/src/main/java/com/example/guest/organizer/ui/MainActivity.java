@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-        DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
+        DateFormat dateFormat = new SimpleDateFormat("MMMM dd, yyyy");
         Date date = new Date();
         final String today = dateFormat.format(date);
         final String tomorrow = dateFormat.format((date.getTime() + 86400000));
