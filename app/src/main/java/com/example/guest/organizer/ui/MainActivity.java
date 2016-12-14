@@ -23,7 +23,12 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import butterknife.Bind;
@@ -44,6 +49,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
+        DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
+        Date date = new Date();
+        final String today = dateFormat.format(date);
+        final String tomorrow = dateFormat.format((date.getTime() + 86400000));
+
         mUser = FirebaseAuth.getInstance().getCurrentUser();
         mDatesRef = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_DAYS).child(mUser.getUid());
 
@@ -51,13 +61,25 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 final List<String> days = new ArrayList<String>();
-                for(DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                    days.add(snapshot.getKey());
-                }
 
+                Log.d("Main Activity", "inside datachange");
+                for(DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                    String key = snapshot.getKey();
+                    if (key.equals(today) || key.equals(tomorrow)){
+                        days.add(key);
+                    }
+
+                }
+                if(!days.contains(today)) {
+                    days.add(today);
+                }
+                if(!days.contains(tomorrow)) {
+                    days.add(tomorrow);
+                }
+                int startDate = days.indexOf(today);
                 adapterViewPager = new DatePagerAdapter(getSupportFragmentManager(), days);
                 mViewPager.setAdapter(adapterViewPager);
-                mViewPager.setCurrentItem(0);
+                mViewPager.setCurrentItem(startDate);
             }
 
             @Override

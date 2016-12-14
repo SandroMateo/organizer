@@ -104,6 +104,7 @@ public class TaskDetailFragment extends Fragment implements View.OnClickListener
     public void onClick(View v) {
         if(v == mAddTaskImageView) {
             Intent intent = new Intent(getActivity(), NewTaskActivity.class);
+            intent.putExtra("date", mDate);
             startActivity(intent);
         }
     }

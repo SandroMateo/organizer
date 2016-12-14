@@ -5,4 +5,5 @@ package com.example.guest.organizer;
  */
 public class Constants {
     public static final String FIREBASE_CHILD_DAYS = "days";
+    public static final String FIREBASE_CHILD_COLLECTIONS = "collections";
 }

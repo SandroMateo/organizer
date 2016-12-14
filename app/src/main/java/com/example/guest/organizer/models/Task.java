@@ -2,6 +2,7 @@ package com.example.guest.organizer.models;
 
 import org.parceler.Parcel;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -14,17 +15,16 @@ public class Task {
     String type;
     List<String> signifier;
     String status;
-    String day;
-    String month;
+    String date;
     String collection;
-    String year;
     String pushId;
 
     public Task(){}
 
-    public Task(String detail, String type) {
+    public Task(String detail, String type, String date) {
         this.detail = detail;
         this.type = type;
+        this.date = date;
     }
 
     public String getDetail() {
@@ -43,16 +43,8 @@ public class Task {
         return status;
     }
 
-    public String getDay() {
-        return day;
-    }
-
-    public String getMonth() {
-        return month;
-    }
-
-    public String getYear() {
-        return year;
+    public String getDate() {
+        return date;
     }
 
     public String getPushId() {
@@ -71,16 +63,8 @@ public class Task {
         this.status = status;
     }
 
-    public void setDay(String day) {
-        this.day = day;
-    }
-
-    public void setMonth(String month) {
-        this.month = month;
-    }
-
-    public void setYear(String year) {
-        this.year = year;
+    public void setDate(String date){
+        this.date = date;
     }
 
     public void setPushId(String pushId) {
