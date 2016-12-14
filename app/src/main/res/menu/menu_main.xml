@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_daily"
+        android:title="Daily"
+        android:visible="true"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_monthly"
+        android:title="Monthly"
+        android:visible="true"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_future"
+        android:title="6 Months"
+        android:visible="true"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_logout"
+        android:title="Logout"
+        android:visible="true"
+        app:showAsAction="never" />
+</menu>
