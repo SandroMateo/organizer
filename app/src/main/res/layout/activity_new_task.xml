@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context="com.example.guest.organizer.ui.NewTaskActivity">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/newTaskHeader"
+        android:text="New Task"
+        android:textSize="30dp"
+        android:textAlignment="center"
+        android:textColor="@color/colorTextIcons"
+        android:layout_marginTop="74dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/typeSpinner"
+        android:layout_alignStart="@+id/typeSpinner" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Type:"
+        android:id="@+id/textView4"
+        android:layout_below="@+id/newTaskHeader"
+        android:layout_alignLeft="@+id/typeSpinner"
+        android:layout_alignStart="@+id/typeSpinner" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/typeSpinner"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView4" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Signifiers:"
+        android:id="@+id/textView"
+        android:layout_below="@+id/typeSpinner"
+        android:layout_alignLeft="@+id/typeSpinner"
+        android:layout_alignStart="@+id/typeSpinner" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Priority"
+        android:id="@+id/priorityCheckBox"
+        android:layout_below="@+id/textView"
+        android:layout_alignLeft="@+id/textView"
+        android:layout_alignStart="@+id/textView"
+        android:textColor="@color/colorTextIcons"/>
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Explore"
+        android:id="@+id/exploreCheckBox"
+        android:layout_alignTop="@+id/priorityCheckBox"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/colorTextIcons" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Inspiration"
+        android:id="@+id/inspirationCheckBox"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentRight="true"
+        android:textColor="@color/colorTextIcons" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Collection:"
+        android:id="@+id/textView2"
+        android:layout_below="@+id/priorityCheckBox"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/collectionsSpinner"
+        android:layout_below="@+id/textView2"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_alignStart="@+id/textView2"
+        android:layout_toLeftOf="@+id/exploreCheckBox"
+        android:layout_toStartOf="@+id/exploreCheckBox" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="or"
+        android:id="@+id/textView3"
+        android:layout_alignTop="@+id/collectionsSpinner"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText2"
+        android:layout_alignTop="@+id/collectionsSpinner"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toRightOf="@+id/exploreCheckBox"
+        android:layout_toEndOf="@+id/exploreCheckBox"
+        android:hint="New Collection"
+        android:textColorHint="@color/colorTextIcons" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Task Detail"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:id="@+id/editText"
+        android:textColor="@color/colorTextIcons"
+        android:textColorHint="@color/colorTextIcons"
+        android:layout_centerVertical="true"
+        android:layout_below="@+id/collectionsSpinner"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save Task"
+        android:id="@+id/button"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/colorAccent" />
+
+</RelativeLayout>

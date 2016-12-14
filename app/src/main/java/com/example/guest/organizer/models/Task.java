@@ -2,6 +2,8 @@ package com.example.guest.organizer.models;
 
 import org.parceler.Parcel;
 
+import java.util.List;
+
 /**
  * Created by Guest on 12/13/16.
  */
@@ -10,7 +12,7 @@ import org.parceler.Parcel;
 public class Task {
     String detail;
     String type;
-    String signifier;
+    List<String> signifier;
     String status;
     String day;
     String month;
@@ -33,7 +35,7 @@ public class Task {
         return type;
     }
 
-    public String getSignifier() {
+    public List<String> getSignifier() {
         return signifier;
     }
 
@@ -61,8 +63,8 @@ public class Task {
         return collection;
     }
 
-    public void setSignifier(String signifier) {
-        this.signifier = signifier;
+    public void addSignifier(String signifier) {
+        this.signifier.add(signifier);
     }
 
     public void setStatus(String status) {
